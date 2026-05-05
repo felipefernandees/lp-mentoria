@@ -1,5 +1,4 @@
-import { ShinyButton } from "@/components/ui/shiny-button";
-import { ExternalLink, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface StickyBarProps {
@@ -35,31 +34,37 @@ const StickyBar = ({
   if (!isVisible || isHidden) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-lg border-t border-border shadow-2xl animate-fade-in">
-      <div className="max-w-7xl mx-auto px-4 py-4">
+    <div
+      className="fixed bottom-0 left-0 right-0 z-50 animate-fade-in"
+      style={{
+        background: 'rgba(10,10,10,0.96)',
+        backdropFilter: 'blur(12px)',
+        borderTop: '1px solid rgba(255,255,255,0.08)',
+      }}
+    >
+      <div className="ds-container py-4">
         <div className="flex items-center justify-between gap-4">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-foreground truncate">
+            <p className="text-sm font-semibold text-white truncate">
               Mentoria 1x1 — IA & Automações com Felipe
             </p>
-            <p className="text-xs text-muted-foreground">Vagas limitadas por ciclo</p>
+            <p className="text-xs" style={{ color: '#52525b' }}>Vagas limitadas por ciclo</p>
           </div>
 
           <div className="flex items-center gap-3">
-            <ShinyButton
-              className="px-6 py-2 text-sm whitespace-nowrap"
+            <button
+              className="btn-ds text-sm"
+              style={{ padding: '10px 24px', fontSize: '0.875rem' }}
               onClick={() => window.open(whatsappUrl, "_blank")}
             >
-              <span className="flex items-center gap-1">
-                Quero uma vaga
-                <ExternalLink className="h-3 w-3" />
-              </span>
-            </ShinyButton>
+              Quero uma vaga →
+            </button>
 
             <button
               onClick={handleClose}
-              className="p-2 hover:bg-muted rounded-lg transition-colors"
+              className="p-2 rounded-lg transition-colors hover:bg-white/10"
               aria-label="Fechar"
+              style={{ color: '#a1a1aa' }}
             >
               <X className="h-4 w-4" />
             </button>

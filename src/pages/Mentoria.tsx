@@ -12,15 +12,13 @@ import About from "@/components/landing/About";
 import FAQ from "@/components/landing/FAQ";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
-import StickyBar from "@/components/landing/StickyBar";
-import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 
 const WHATSAPP_URL =
   "https://wa.me/5528999339279?text=Oi%20Felipe%2C%20vi%20sua%20mentoria%20e%20quero%20entender%20se%20faz%20sentido%20pra%20mim";
 
 const Mentoria = () => {
   useEffect(() => {
-    document.title = "Mentoria 1x1 de IA e Automações — com Felipe";
+    document.title = "Mentoria Felipe Tâmbara";
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -40,7 +38,7 @@ const Mentoria = () => {
       metaTag.setAttribute("content", content);
     };
 
-    addMetaTag("og:title", "Mentoria 1x1 de IA e Automações — com Felipe");
+    addMetaTag("og:title", "Mentoria Felipe Tâmbara");
     addMetaTag(
       "og:description",
       "De estagiário a R$220k em 12 meses. Mentoria 1x1 com Felipe: encontre problemas que empresas pagam pra resolver e feche seu primeiro cliente."
@@ -59,7 +57,7 @@ const Mentoria = () => {
     };
 
     addTwitterTag("twitter:card", "summary_large_image");
-    addTwitterTag("twitter:title", "Mentoria 1x1 de IA e Automações — com Felipe");
+    addTwitterTag("twitter:title", "Mentoria Felipe Tâmbara");
     addTwitterTag(
       "twitter:description",
       "De estagiário a R$220k em 12 meses. Mentoria 1x1 com Felipe: encontre problemas que empresas pagam pra resolver e feche seu primeiro cliente."
@@ -94,44 +92,20 @@ const Mentoria = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
-      <AnimatedGridPattern
-        numSquares={30}
-        maxOpacity={0.05}
-        duration={3}
-        repeatDelay={1}
-        className="absolute inset-0 z-0 fill-muted-foreground/10 stroke-muted-foreground/10"
-      />
-
-      <div className="relative z-10">
-        <Hero whatsappUrl={WHATSAPP_URL} logoUrl="/logo.svg" />
-
-        <Agitation />
-
-        <Insight />
-
-        <SocialProof whatsappUrl={WHATSAPP_URL} />
-
-        <Features whatsappUrl={WHATSAPP_URL} />
-
-        <Roadmap whatsappUrl={WHATSAPP_URL} />
-
-        <IsForYou />
-
-        <Investment whatsappUrl={WHATSAPP_URL} />
-
-        <Guarantee />
-
-        <About photoUrl="/felipe.jpg" />
-
-        <FAQ whatsappUrl={WHATSAPP_URL} />
-
-        <FinalCTA whatsappUrl={WHATSAPP_URL} />
-
-        <Footer />
-      </div>
-
-      <StickyBar whatsappUrl={WHATSAPP_URL} />
+    <div className="overflow-x-hidden">
+      <Hero whatsappUrl={WHATSAPP_URL} logoUrl="/logo.svg" />
+      <Agitation />
+      <Insight />
+      <SocialProof whatsappUrl={WHATSAPP_URL} />
+      <Features whatsappUrl={WHATSAPP_URL} />
+      <Roadmap whatsappUrl={WHATSAPP_URL} />
+      <IsForYou />
+      <Investment whatsappUrl={WHATSAPP_URL} />
+      <Guarantee />
+      <About photoUrl="/felipe.jpg" />
+      <FAQ whatsappUrl={WHATSAPP_URL} />
+      <FinalCTA whatsappUrl={WHATSAPP_URL} />
+      <Footer />
     </div>
   );
 };

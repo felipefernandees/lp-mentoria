@@ -1,6 +1,4 @@
-import { RainbowButton } from "@/components/ui/rainbow-button";
-import { CheckCircle, ExternalLink } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { CheckCircle } from "lucide-react";
 
 interface InvestmentProps {
   whatsappUrl?: string;
@@ -17,41 +15,61 @@ const Investment = ({
   ];
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">Investimento</h2>
+    <section className="section-light section-light-fade">
+      <div className="ds-container">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" style={{ color: '#0a0a0a' }}>
+          Investimento
+        </h2>
 
-        <Card className="border border-border/50 bg-card shadow-card">
-          <CardContent className="p-8 md:p-12">
+        <div className="max-w-md mx-auto">
+          <div
+            className="rounded-xl p-8 md:p-12 text-center"
+            style={{ border: '1px solid rgba(0,0,0,0.1)', background: '#ffffff' }}
+          >
             <div className="mb-8">
-              <p className="text-6xl md:text-7xl font-bold text-foreground mb-2">R$ 4.000</p>
-              <p className="text-lg text-muted-foreground">ou 12x no cartão</p>
+              {/* Preço principal — parcelamento em destaque */}
+              <p className="text-sm font-semibold uppercase tracking-widest mb-2" style={{ color: '#a1a1aa' }}>
+                a partir de
+              </p>
+              <div className="flex items-end justify-center gap-1 mb-1">
+                <span className="text-2xl font-semibold" style={{ color: '#52525b', lineHeight: 1.6 }}>12x</span>
+                <span className="text-6xl md:text-7xl font-bold leading-none" style={{ color: '#0a0a0a' }}>R$400</span>
+              </div>
+              <p className="text-sm" style={{ color: '#a1a1aa' }}>no cartão de crédito</p>
+
+              {/* Divisor */}
+              <div className="flex items-center gap-3 my-5 max-w-xs mx-auto">
+                <div className="flex-1 h-px" style={{ background: 'rgba(0,0,0,0.08)' }} />
+                <span className="text-xs font-medium" style={{ color: '#a1a1aa' }}>ou</span>
+                <div className="flex-1 h-px" style={{ background: 'rgba(0,0,0,0.08)' }} />
+              </div>
+
+              {/* À vista */}
+              <p className="text-3xl font-bold" style={{ color: '#0a0a0a' }}>R$4.000 <span className="text-lg font-medium" style={{ color: '#52525b' }}>à vista</span></p>
             </div>
 
             <div className="space-y-3 mb-10 text-left max-w-sm mx-auto">
               {includes.map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                  <p className="text-foreground">{item}</p>
+                  <CheckCircle className="h-5 w-5 flex-shrink-0" style={{ color: '#00E3A5' }} />
+                  <p style={{ color: '#0a0a0a' }}>{item}</p>
                 </div>
               ))}
             </div>
 
-            <RainbowButton
+            <button
               onClick={() => window.open(whatsappUrl, "_blank")}
-              className="text-lg px-8 py-6 bg-slate-50 text-zinc-950 w-full"
+              className="btn-ds w-full justify-center text-base"
+              style={{ width: '100%' }}
             >
-              <span className="flex items-center justify-center gap-2">
-                Quero uma vaga →
-                <ExternalLink className="h-5 w-5" />
-              </span>
-            </RainbowButton>
+              Quero uma vaga →
+            </button>
 
-            <p className="text-sm text-muted-foreground mt-6">
+            <p className="text-sm mt-6" style={{ color: '#a1a1aa' }}>
               Vagas limitadas por ciclo — o atendimento individual exige isso.
             </p>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -118,16 +120,16 @@
     --popover: 0 0% 8%;            /* Cinza escuro */
     --popover-foreground: 0 0% 100%;
 
-    /* CTA principal - verde água moderno */
-    --primary: 164 100% 45%;       /* #00E3A5 - Verde água moderno */
+    /* CTA principal - teal */
+    --primary: 164 100% 45%;       /* #00E3A5 - Teal */
     --primary-foreground: 0 0% 100%;
 
     /* Elementos secundários - cinza neutro */
     --secondary: 240 5% 65%;       /* #A1A1AA - Cinza neutro */
     --secondary-foreground: 0 0% 4%;
 
-    /* CTA especial - verde água vibrante */
-    --cta-button: 164 100% 45%;    /* #00E3A5 - Verde água para CTAs */
+    /* CTA especial - indigo puro */
+    --cta-button: 243 76% 59%;     /* #4F46E5 - Indigo para botões */
     --cta-button-foreground: 0 0% 100%;
 
     --accent: 240 5% 65%;         /* Cinza neutro para highlights */
@@ -141,15 +143,15 @@
 
     --border: 240 5% 26%;          /* Bordas cinza claro */
     --input: 0 0% 8%;              /* Inputs escuros */
-    --ring: 164 100% 45%;          /* #00E3A5 - Focus ring = primary */
+    --ring: 164 100% 45%;          /* #00E3A5 - Focus ring = teal */
 
     --radius: 0.75rem;
     
     /* Gradientes personalizados */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(0 0% 6%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(164 100% 50%) 100%);
-    --gradient-cta-button: linear-gradient(135deg, hsl(var(--cta-button)) 0%, hsl(164 100% 50%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(164 100% 45%) 0%, hsl(164 100% 55%) 100%);
+    --gradient-hero: #0A0A0A;
+    --gradient-cta: linear-gradient(135deg, #4F46E5 0%, #3730a3 100%);
+    --gradient-cta-button: linear-gradient(135deg, #4F46E5 0%, #3730a3 100%);
+    --gradient-accent: linear-gradient(135deg, #00E3A5 0%, #06b6d4 100%);
     
     /* Sombras elegantes */
     --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.6);
@@ -267,7 +269,8 @@
   }
 
   .gradient-hero {
-    background: var(--gradient-hero);
+    background: #0A0A0A;
+    color: #ffffff;
   }
   
   .gradient-cta {
@@ -295,7 +298,7 @@
   }
   
   .text-gradient {
-    background: var(--gradient-accent);
+    background: linear-gradient(135deg, #00E3A5 0%, #06b6d4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -309,7 +312,260 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   }
+}
+
+/* Design system — seções e utilitários */
+.section-dark {
+  background-color: #0A0A0A;
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.section-light {
+  background-color: #ffffff;
+  color: #0a0a0a;
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section-dark,
+  .section-light {
+    padding: 48px 0;
+  }
+}
+
+.section-light .text-muted-foreground {
+  color: #52525b;
+}
+
+.ds-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .ds-container {
+    padding: 0 16px;
+  }
+}
+
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(79, 70, 229, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79, 70, 229, 0.3) 1px, transparent 1px);
+  background-size: 60px 60px;
+  /* máscara que espelha o formato do glow: visível no topo-centro, some nas bordas */
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 60% at 50% 0%,
+    #000 0%,
+    rgba(0,0,0,0.75) 25%,
+    rgba(0,0,0,0.25) 52%,
+    transparent 70%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 60% at 50% 0%,
+    #000 0%,
+    rgba(0,0,0,0.75) 25%,
+    rgba(0,0,0,0.25) 52%,
+    transparent 70%
+  );
+}
+
+.bg-grid-bottom {
+  background-image:
+    linear-gradient(to right, rgba(79, 70, 229, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79, 70, 229, 0.3) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 60% at 50% 100%,
+    #000 0%,
+    rgba(0,0,0,0.75) 25%,
+    rgba(0,0,0,0.25) 52%,
+    transparent 70%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 60% at 50% 100%,
+    #000 0%,
+    rgba(0,0,0,0.75) 25%,
+    rgba(0,0,0,0.25) 52%,
+    transparent 70%
+  );
+}
+
+.btn-ds {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #4F46E5, #3730a3);
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-ds:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 0 28px rgba(79, 70, 229, 0.35);
+}
+
+.btn-ds-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #00E3A5;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: 1.5px solid #00E3A5;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-ds-outline:hover {
+  background: rgba(0, 227, 165, 0.08);
+  transform: translateY(-1px);
+}
+
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #00E3A5;
+  background: rgba(0, 227, 165, 0.1);
+  border: 1px solid rgba(0, 227, 165, 0.2);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+/* Carrossel infinito */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-track--left {
+  animation: marquee-left 30s linear infinite;
+}
+
+.marquee-track--right {
+  animation: marquee-right 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Fade no TOPO das seções brancas que seguem seções escuras */
+.section-light-fade {
+  position: relative;
+}
+
+.section-light-fade::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, #ffffff 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Glow roxo topo-centro (estilo NetworkPro) — div separado após o grid */
+.bg-glow-top {
+  background: radial-gradient(
+    ellipse 75% 60% at 50% 0%,
+    rgba(79, 70, 229, 0.55) 0%,
+    rgba(79, 70, 229, 0.28) 30%,
+    rgba(79, 70, 229, 0.08) 58%,
+    transparent 75%
+  );
+  pointer-events: none;
+}
+
+.bg-glow-bottom {
+  background: radial-gradient(
+    ellipse 75% 60% at 50% 100%,
+    rgba(79, 70, 229, 0.55) 0%,
+    rgba(79, 70, 229, 0.28) 30%,
+    rgba(79, 70, 229, 0.08) 58%,
+    transparent 75%
+  );
+  pointer-events: none;
+}
+
+.bg-grid-bottom-right {
+  background-image:
+    linear-gradient(to right, rgba(79, 70, 229, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79, 70, 229, 0.3) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 100% 100%, #000 0%, rgba(0,0,0,0.75) 25%, rgba(0,0,0,0.25) 52%, transparent 70%);
+  mask-image: radial-gradient(ellipse 80% 80% at 100% 100%, #000 0%, rgba(0,0,0,0.75) 25%, rgba(0,0,0,0.25) 52%, transparent 70%);
+}
+
+.bg-grid-top-left {
+  background-image:
+    linear-gradient(to right, rgba(79, 70, 229, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79, 70, 229, 0.3) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, #000 0%, rgba(0,0,0,0.75) 25%, rgba(0,0,0,0.25) 52%, transparent 70%);
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 0%, #000 0%, rgba(0,0,0,0.75) 25%, rgba(0,0,0,0.25) 52%, transparent 70%);
+}
+
+.bg-glow-bottom-right {
+  background: radial-gradient(
+    ellipse 80% 80% at 100% 100%,
+    rgba(79, 70, 229, 0.45) 0%,
+    rgba(79, 70, 229, 0.22) 30%,
+    rgba(79, 70, 229, 0.05) 58%,
+    transparent 75%
+  );
+  pointer-events: none;
+}
+
+.bg-glow-top-left {
+  background: radial-gradient(
+    ellipse 80% 80% at 0% 0%,
+    rgba(79, 70, 229, 0.45) 0%,
+    rgba(79, 70, 229, 0.22) 30%,
+    rgba(79, 70, 229, 0.05) 58%,
+    transparent 75%
+  );
+  pointer-events: none;
+}
+
+/* Manter compatibilidade — não usado mais nos componentes principais */
+.section-radial-glow {
+  position: relative;
 }
 a[href*="lovable.dev"], 
 iframe[src*="lovable.dev"],
@@ -321,4 +577,13 @@ div[style*="Edit with Lovable"],
   pointer-events: none !important;
   position: absolute !important;
   z-index: -9999 !important;
+}
+
+/* Esconder barra de rolagem horizontal */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
