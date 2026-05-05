@@ -1,46 +1,45 @@
-import { Button } from "@/components/ui/button";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ExternalLink } from "lucide-react";
 
 interface FAQProps {
-  formUrl?: string;
+  whatsappUrl?: string;
 }
 
-const FAQ = ({ 
-  formUrl = "https://yayforms.link/eO45LRV"
+const FAQ = ({
+  whatsappUrl = "https://wa.me/5528999339279?text=Oi%20Felipe%2C%20vi%20sua%20mentoria%20e%20quero%20entender%20se%20faz%20sentido%20pra%20mim",
 }: FAQProps) => {
   const faqs = [
     {
       question: "Preciso saber programar?",
-      answer: "Não. Você vai aprender o necessário para implementar fluxos práticos sem precisar de conhecimento técnico avançado."
+      answer:
+        "Não. Trabalho com ferramentas no-code e low-code. O foco é resolver problemas, não escrever código.",
     },
     {
-      question: "Funciona para qualquer nicho?",
-      answer: "Sim. A metodologia se adapta para serviços, infoprodutos e negócios locais. Você aprenderá a aplicar IA em qualquer segmento."
+      question: "Já tentei N8n e não consegui evoluir. Funciona pra mim?",
+      answer:
+        "Esse é exatamente o perfil de quem mais evolui na mentoria. O problema não era você — era a falta de direção.",
     },
     {
-      question: "Qual a duração da mentoria?",
-      answer: "3 meses de acompanhamento direto comigo + acesso vitalício à comunidade e todos os conteúdos gravados."
+      question: "E se eu tiver renda baixa agora?",
+      answer:
+        "A maioria dos mentorados estava na mesma situação. Por isso o parcelamento em 12x existe — pra quem quer investir no crescimento antes de ter a receita lá.",
     },
     {
-      question: "E se eu não tiver tempo todo dia?",
-      answer: "Planejamento semanal com metas realistas e todos os encontros gravados. Você estuda no seu ritmo."
+      question: "Qual o formato exato?",
+      answer:
+        "1 call individual por semana, durante 3 meses. Mais acesso ao grupo e suporte entre as sessões.",
     },
     {
-      question: "Quando posso começar?",
-      answer: "Assim que sua aplicação for aprovada e o pagamento confirmado. O início é imediato."
+      question: "Quando começo?",
+      answer:
+        "Assim que o pagamento for confirmado, você já entra no grupo e marcamos o onboarding essa semana.",
     },
     {
       question: "Tem garantia?",
-      answer: "Sim! Se você aplicar tudo que eu ensinar e não tiver resultados, eu te coloco para trabalhar comigo."
-    }
+      answer: "Sim. Se aplicar tudo e não tiver resultado, eu te coloco pra trabalhar comigo.",
+    },
   ];
-
-  const handleFormClick = () => {
-    const urlWithUtm = `${formUrl}?utm_source=lp&utm_medium=cta&utm_campaign=mentoria_ia`;
-    window.open(urlWithUtm, '_blank');
-  };
 
   return (
     <section className="py-16 md:py-24">
@@ -78,12 +77,12 @@ const FAQ = ({
 
           {/* CTA */}
           <div className="text-center mt-8 px-8">
-            <RainbowButton 
+            <RainbowButton
               className="text-lg px-8 py-6"
-              onClick={handleFormClick}
+              onClick={() => window.open(whatsappUrl, "_blank")}
             >
               <span className="flex items-center gap-2">
-                Quero participar da mentoria
+                Quero uma vaga
                 <ExternalLink className="h-5 w-5" />
               </span>
             </RainbowButton>

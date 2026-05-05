@@ -1,50 +1,75 @@
-import { Button } from "@/components/ui/button";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
-import { useState } from "react";
+import { Play } from "lucide-react";
+import { useState, useRef } from "react";
 
 interface SocialProofProps {
-  formUrl?: string;
-  caseImages?: string[];
+  whatsappUrl?: string;
 }
 
-const SocialProof = ({ 
-  formUrl = "https://yayforms.link/eO45LRV",
-  caseImages = [
-    "https://baserow-backend-production20240528124524339000000001.s3.amazonaws.com/user_files/WlGrPrsEYz9lZMQwD583r4r0SgMOZcs0_32b682f996cc63c1557dd6cc16a280c93b69a389a71b50a1051a7d3965caea3e.jpeg"
-  ]
+const SocialProof = ({
+  whatsappUrl = "https://wa.me/5528999339279?text=Oi%20Felipe%2C%20vi%20sua%20mentoria%20e%20quero%20entender%20se%20faz%20sentido%20pra%20mim",
 }: SocialProofProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  
-  // Dados dos casos de sucesso
-  const cases = [
-    { 
-      image: "https://baserow-backend-production20240528124524339000000001.s3.amazonaws.com/user_files/WlGrPrsEYz9lZMQwD583r4r0SgMOZcs0_32b682f996cc63c1557dd6cc16a280c93b69a389a71b50a1051a7d3965caea3e.jpeg", 
-      legend: "Projeto vendido por R$9.000 + R$3.600/mês" 
+  const [videoPlaying, setVideoPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlayVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setVideoPlaying(true);
+    }
+  };
+
+  const testimonials = [
+    {
+      image: "/depoimentos/gabriel-martins.jpg",
+      name: "Gabriel Martins",
+      highlight: "R$15.200 recebido",
+      legend: "Gabriel vendeu seguindo a metodologia ensinada na primeira aula",
     },
-    { 
-      image: "https://baserow-backend-production20240528124524339000000001.s3.amazonaws.com/user_files/GGLrQG9JWpXFVtb6UkzCTLrL0R4rmWew_62199a4acbd6797dcff9a8057eb78afcca177c8debb308367edb8b634d09396e.jpeg", 
-      legend: "Primeiro projeto vendido por R$6.000" 
+    {
+      image: "/depoimentos/gui-vilas-9k.jpg",
+      name: "Guilherme Vilas",
+      highlight: "R$9.000 + R$3.600/mês",
+      legend: "Guilherme fechou implementação + contrato de 12 meses de recorrência",
     },
-    { 
-      image: "https://baserow-backend-production20240528124524339000000001.s3.amazonaws.com/user_files/uQzFVd24RWVj2OIVwtx8v6BckaieCXy7_5f2f9158af9aaa9ef9d6ed1dca415dfdeffe8a00a99ca3cb417b966bbf33f013.jpeg", 
-      legend: "Feedback diretamente da comunidade" 
+    {
+      image: "/depoimentos/gui-vilas-4k.jpg",
+      name: "Guilherme Vilas",
+      highlight: "R$4.000",
+      legend: "Segundo projeto de Guilherme usando o método",
+    },
+    {
+      image: "/depoimentos/lucas-camelo.jpg",
+      name: "Lucas Camelo",
+      highlight: "Saiu da CLT",
+      legend: "Lucas vendeu automação de R$6k no primeiro mês e já tem segundo cliente na mão",
+    },
+    {
+      image: "/depoimentos/gustavo-piramo.jpg",
+      name: "Gustavo Píramo",
+      highlight: "Primeiros projetos de IA",
+      legend: "Gustavo começou 2026 recebendo dos primeiros projetos de IA",
+    },
+    {
+      image: "/depoimentos/meu-10k.jpg",
+      name: "Felipe",
+      highlight: "R$10.000",
+      legend: "Projeto entregue no modelo ensinado na mentoria",
+    },
+    {
+      image: "/depoimentos/meu-6k.jpg",
+      name: "Felipe",
+      highlight: "R$6.000",
+      legend: "Mais um projeto fechado pelo método",
+    },
+    {
+      image: "/depoimentos/meu-5k.jpg",
+      name: "Felipe",
+      highlight: "R$5.500",
+      legend: "Recorrência gerada com o mesmo cliente",
     },
   ];
-
-  const handleFormClick = () => {
-    const urlWithUtm = `${formUrl}?utm_source=lp&utm_medium=cta&utm_campaign=mentoria_ia`;
-    window.open(urlWithUtm, '_blank');
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % cases.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length);
-  };
 
   return (
     <section className="py-20 px-4">
@@ -52,85 +77,93 @@ const SocialProof = ({
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Resultados reais de alunos
+            Resultados reais. Sem SaaS. Sem promessa.
           </h2>
           <p className="text-xl text-muted-foreground">
-            Alguns prints enviados por quem aplicou o método.
+            Quem entrou na mentoria e o que construiu.
           </p>
         </div>
 
-        {/* Carousel */}
-        <div className="relative mb-12">
-          <div className="overflow-hidden rounded-2xl">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {cases.map((case_, index) => (
-                <div key={index} className="w-full flex-shrink-0 flex justify-center">
-                  <Card className="mx-4 shadow-card border-border/50 w-full max-w-sm md:max-w-md lg:max-w-lg">
-                    <CardContent className="p-0">
-                      <div className="aspect-[4/5] md:aspect-[3/4] lg:aspect-[2/3] bg-card rounded-lg overflow-hidden">
-                        <img 
-                          src={case_.image}
-                          alt={case_.legend}
-                          className="w-full h-full object-contain"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23374151'/%3E%3Ctext x='200' y='150' text-anchor='middle' fill='%23fff' font-size='16'%3EResultado de Aluno%3C/text%3E%3C/svg%3E";
-                          }}
-                        />
-                      </div>
-                      <div className="p-4 md:p-6">
-                        <p className="text-base md:text-lg font-semibold text-center">
-                          {case_.legend}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
+        {/* Featured video */}
+        <div className="mb-12">
+          <div className="relative max-w-2xl mx-auto rounded-2xl overflow-hidden bg-card border border-border/50 shadow-card">
+            <video
+              ref={videoRef}
+              src="/depoimentos/leticia-video.mov"
+              className="w-full aspect-video object-cover"
+              controls={videoPlaying}
+              playsInline
+              onEnded={() => setVideoPlaying(false)}
+            />
+            {!videoPlaying && (
+              <button
+                onClick={handlePlayVideo}
+                className="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/50 transition-colors"
+                aria-label="Reproduzir vídeo"
+              >
+                <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                  <Play className="w-8 h-8 text-zinc-900 ml-1" />
                 </div>
-              ))}
+              </button>
+            )}
+            <div className="p-4 text-center">
+              <p className="text-base font-semibold">Letícia — aluna da mentoria</p>
             </div>
           </div>
+        </div>
 
-          {/* Navigation buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-card/80 backdrop-blur-sm border border-border rounded-full p-3 hover:bg-card transition-smooth"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
-          
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-card/80 backdrop-blur-sm border border-border rounded-full p-3 hover:bg-card transition-smooth"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
+        {/* Testimonials grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {testimonials.map((t, index) => (
+            <Card
+              key={index}
+              className="border border-border/50 bg-card/50 overflow-hidden hover:shadow-card transition-shadow duration-300"
+            >
+              <CardContent className="p-0">
+                <div className="aspect-[4/5] bg-muted overflow-hidden">
+                  <img
+                    src={t.image}
+                    alt={t.legend}
+                    className="w-full h-full object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src =
+                        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%23374151'/%3E%3Ctext x='200' y='250' text-anchor='middle' fill='%23fff' font-size='16'%3EResultado de Aluno%3C/text%3E%3C/svg%3E";
+                    }}
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="text-sm font-bold text-primary mb-1">{t.highlight}</p>
+                  <p className="text-xs text-muted-foreground">{t.legend}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
 
-          {/* Indicators */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {cases.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex ? 'bg-primary' : 'bg-muted'
-                }`}
-              />
-            ))}
-          </div>
+          {/* Placeholder card */}
+          <Card className="border border-border/50 bg-card/30 overflow-hidden">
+            <CardContent className="p-0">
+              <div className="aspect-[4/5] bg-muted/30 flex flex-col items-center justify-center gap-3">
+                <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center">
+                  <Play className="w-6 h-6 text-muted-foreground" />
+                </div>
+                <p className="text-sm text-muted-foreground">Em breve</p>
+              </div>
+              <div className="p-4">
+                <p className="text-xs text-muted-foreground">Novos resultados chegando</p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* CTA */}
         <div className="text-center">
-          <ShinyButton 
+          <ShinyButton
             className="px-8 py-4"
-            onClick={handleFormClick}
+            onClick={() => window.open(whatsappUrl, "_blank")}
           >
             <span className="flex items-center gap-2">
-              Aplicar para a mentoria
-              <ExternalLink className="h-4 w-4" />
+              Quero esse resultado também →
             </span>
           </ShinyButton>
         </div>
