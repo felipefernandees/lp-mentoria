@@ -8,7 +8,8 @@ const FinalCTA = ({
   return (
     <section className="section-light relative overflow-hidden" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
       <div className="ds-container relative z-10 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: '#0a0a0a' }}>
+        <p className="section-label text-center" style={{ color: '#00E3A5' }}>&#123; Próximo Passo &#125;</p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: '#0a0a0a', letterSpacing: '-0.02em' }}>
           Pare de ficar pra trás com{" "}
           <span className="text-gradient">IA.</span>
         </h2>
@@ -24,7 +25,7 @@ const FinalCTA = ({
           style={{ padding: '18px 48px', fontSize: '1.125rem' }}
           onClick={() => window.open(whatsappUrl, "_blank")}
         >
-          Quero uma vaga agora →
+          Quero uma vaga agora
         </button>
 
         <div className="mt-8 text-sm" style={{ color: '#71717a' }}>

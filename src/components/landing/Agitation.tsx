@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import BlurFade from "@/components/ui/blur-fade";
 
 const tools = [
   { name: 'n8n',     icon: '/icons/n8n.svg',     glow: '#EA4B71', top: 0,   left: 16,  rotate: -8 },
@@ -37,9 +38,12 @@ const Agitation = () => {
 
           {/* Texto */}
           <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: '#0a0a0a' }}>
-              Eu sei exatamente onde você está.
-            </h2>
+            <BlurFade delay={0.1} inView>
+              <p className="section-label" style={{ color: '#00E3A5' }}>&#123; O Problema &#125;</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: '#0a0a0a', letterSpacing: '-0.02em' }}>
+                Eu sei exatamente onde você está.
+              </h2>
+            </BlurFade>
             <div className="space-y-5 text-lg leading-relaxed" style={{ color: '#52525b' }}>
               <p>
                 Você comprou curso. Assistiu tutorial. Tentou montar um agente, um workflow no N8n,

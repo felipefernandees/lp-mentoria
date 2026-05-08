@@ -2,7 +2,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer style={{ background: '#ffffff', borderTop: '1px solid rgba(0,0,0,0.05)', padding: '64px 0 48px 0' }}>
+    <footer style={{ background: '#ffffff', borderTop: '1px solid rgba(0,0,0,0.06)', padding: '64px 0 48px 0' }}>
       <div className="ds-container">
         <div className="flex flex-col items-center text-center space-y-8">
           

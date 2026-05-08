@@ -57,7 +57,7 @@ const StickyBar = ({
               style={{ padding: '10px 24px', fontSize: '0.875rem' }}
               onClick={() => window.open(whatsappUrl, "_blank")}
             >
-              Quero uma vaga →
+              Quero uma vaga
             </button>
 
             <button

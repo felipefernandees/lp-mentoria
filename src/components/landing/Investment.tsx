@@ -17,14 +17,15 @@ const Investment = ({
   return (
     <section className="section-light section-light-fade">
       <div className="ds-container">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" style={{ color: '#0a0a0a' }}>
+        <p className="section-label text-center" style={{ color: '#00E3A5' }}>&#123; Investimento &#125;</p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" style={{ color: '#0a0a0a', letterSpacing: '-0.02em' }}>
           Investimento
         </h2>
 
         <div className="max-w-md mx-auto">
           <div
             className="rounded-xl p-8 md:p-12 text-center"
-            style={{ border: '1px solid rgba(0,0,0,0.1)', background: '#ffffff' }}
+            style={{ border: '1px solid rgba(0,0,0,0.07)', background: '#ffffff', boxShadow: '0 8px 32px rgba(0,0,0,0.06)' }}
           >
             <div className="mb-8">
               {/* Preço principal — parcelamento em destaque */}
@@ -62,7 +63,7 @@ const Investment = ({
               className="btn-ds w-full justify-center text-base"
               style={{ width: '100%' }}
             >
-              Quero uma vaga →
+              Quero uma vaga
             </button>
 
             <p className="text-sm mt-6" style={{ color: '#a1a1aa' }}>

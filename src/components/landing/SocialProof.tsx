@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import BlurFade from "@/components/ui/blur-fade";
 import { Play } from "lucide-react";
 
 interface SocialProofProps {
@@ -74,7 +75,7 @@ function TestimonialCard({
   return (
     <div
       className="rounded-xl overflow-hidden flex-shrink-0 w-[80vw] md:w-[40vw] lg:w-auto snap-center"
-      style={{ border: "1px solid rgba(0,0,0,0.08)", background: "#ffffff" }}
+      style={{ border: "1px solid rgba(0,0,0,0.06)", background: "#ffffff" }}
     >
       <div className="overflow-hidden" style={{ background: "#f4f4f5", aspectRatio: "3/4" }}>
         <img
@@ -113,7 +114,7 @@ function VideoCard() {
   return (
     <div
       className="rounded-xl overflow-hidden flex-shrink-0 w-[80vw] md:w-[40vw] lg:w-auto snap-center"
-      style={{ border: "1px solid rgba(0,0,0,0.08)", background: "#ffffff" }}
+      style={{ border: "1px solid rgba(0,0,0,0.06)", background: "#ffffff" }}
     >
       <div className="relative overflow-hidden" style={{ aspectRatio: "3/4", background: "#0a0a0a" }}>
         <video
@@ -160,10 +161,12 @@ const SocialProof = ({
     <section className="section-light section-light-fade">
       {/* Header com container padrão */}
       <div className="ds-container">
-        <div className="text-center mb-12">
+        <BlurFade delay={0.1} inView>
+        <div className="mb-12">
+          <p className="section-label" style={{ color: '#00E3A5' }}>&#123; Resultados Reais &#125;</p>
           <h2
             className="text-3xl md:text-4xl font-bold mb-4"
-            style={{ color: "#0a0a0a" }}
+            style={{ color: "#0a0a0a", letterSpacing: '-0.02em' }}
           >
             Resultados reais. Sem SaaS. Sem promessa.
           </h2>
@@ -171,6 +174,7 @@ const SocialProof = ({
             Quem entrou na mentoria e o que construiu.
           </p>
         </div>
+        </BlurFade>
       </div>
 
       {/* Container mais largo para os cards */}
@@ -198,7 +202,7 @@ const SocialProof = ({
             className="btn-ds"
             onClick={() => window.open(whatsappUrl, "_blank")}
           >
-            Quero esse resultado também →
+            Quero esse resultado também
           </button>
         </div>
       </div>

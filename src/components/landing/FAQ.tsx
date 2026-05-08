@@ -48,7 +48,8 @@ const FAQ = ({
       <div className="bg-glow-bottom absolute inset-0 w-full h-full" />
       <div className="ds-container relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <p className="section-label text-center">&#123; Dúvidas Frequentes &#125;</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
             Perguntas frequentes
           </h2>
           <p style={{ color: '#a1a1aa' }}>Tire suas dúvidas sobre a mentoria</p>
@@ -57,7 +58,7 @@ const FAQ = ({
         <div className="max-w-2xl mx-auto mb-10">
           <div
             className="rounded-xl overflow-hidden"
-            style={{ background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.08)' }}
+            style={{ background: '#0a0a0a', border: '1px solid rgba(0,227,165,0.1)' }}
           >
             {faqs.map((faq, index) => (
               <div
@@ -77,13 +78,21 @@ const FAQ = ({
                     }}
                   />
                 </button>
-                {openIndex === index && (
-                  <div className="px-6 pb-5">
-                    <p className="text-base leading-relaxed" style={{ color: '#a1a1aa' }}>
-                      {faq.answer}
-                    </p>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateRows: openIndex === index ? '1fr' : '0fr',
+                    transition: 'grid-template-rows 0.28s ease',
+                  }}
+                >
+                  <div style={{ overflow: 'hidden' }}>
+                    <div className="px-6 pb-5 pt-1">
+                      <p className="text-base leading-relaxed" style={{ color: '#a1a1aa' }}>
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
@@ -94,7 +103,7 @@ const FAQ = ({
             className="btn-ds"
             onClick={() => window.open(whatsappUrl, "_blank")}
           >
-            Quero uma vaga →
+            Quero uma vaga
           </button>
         </div>
       </div>
