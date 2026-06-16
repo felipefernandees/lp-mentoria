@@ -31,7 +31,7 @@ const About = ({ photoUrl = "/felipe.jpg" }: AboutProps) => {
                 className="text-3xl md:text-5xl font-bold mb-8"
                 style={{ color: '#ffffff', letterSpacing: '-0.02em', lineHeight: 1.05 }}
               >
-                Quem vai te acompanhar
+                O que você conquista nesses 3 meses
               </h2>
             </BlurFade>
 
@@ -94,19 +94,19 @@ const About = ({ photoUrl = "/felipe.jpg" }: AboutProps) => {
                 className="text-base leading-relaxed mb-3"
                 style={{ color: '#A1A1AA', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}
               >
-                Faturei <span style={{ color: '#00E3A5', fontWeight: 600 }}>R$220.000 em 12 meses</span> resolvendo
-                problemas reais com IA — sem SaaS, sem infoproduto. Encontrando empresas com problemas,
-                construindo a solução, cobrando por isso.
+                Você vai ter ao lado alguém que fez{' '}
+                <span style={{ color: '#00E3A5', fontWeight: 600 }}>R$220.000 em 12 meses</span>{' '}
+                resolvendo problemas reais com IA — sem SaaS, sem infoproduto — e que vai te guiar
+                pelo mesmo caminho sem os erros que me custaram meses.
               </p>
 
               <p
                 className="text-base leading-relaxed"
                 style={{ color: '#A1A1AA', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}
               >
-                Hoje ensino exatamente o caminho que percorri — sem os erros que levei meses pra
-                corrigir. E faço questão de estar presente de verdade: quando você entra na
-                mentoria, você tem acesso{' '}
-                <span style={{ color: '#00E3A5', fontWeight: 600 }}>a mim, não a um suporte genérico</span>.
+                Não é suporte genérico. É{' '}
+                <span style={{ color: '#00E3A5', fontWeight: 600 }}>uma call por semana diretamente comigo</span>,
+                focada em destravar o que está entre você e o seu próximo contrato.
               </p>
             </BlurFade>
 

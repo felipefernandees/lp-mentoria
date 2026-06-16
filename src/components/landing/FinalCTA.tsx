@@ -1,10 +1,8 @@
 interface FinalCTAProps {
-  whatsappUrl?: string;
+  onOpenForm?: () => void;
 }
 
-const FinalCTA = ({
-  whatsappUrl = "https://wa.me/5528999339279?text=Oi%20Felipe%2C%20vi%20sua%20mentoria%20e%20quero%20entender%20se%20faz%20sentido%20pra%20mim",
-}: FinalCTAProps) => {
+const FinalCTA = ({ onOpenForm }: FinalCTAProps) => {
   return (
     <section className="section-light relative overflow-hidden" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
       <div className="ds-container relative z-10 text-center">
@@ -23,9 +21,9 @@ const FinalCTA = ({
         <button
           className="btn-ds text-lg"
           style={{ padding: '18px 48px', fontSize: '1.125rem' }}
-          onClick={() => window.open(whatsappUrl, "_blank")}
+          onClick={onOpenForm}
         >
-          Quero uma vaga agora
+          Aplicar para a Mentoria
         </button>
 
         <div className="mt-8 text-sm" style={{ color: '#71717a' }}>

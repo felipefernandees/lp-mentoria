@@ -2,7 +2,7 @@ import { useState } from "react";
 import BlurFade from "@/components/ui/blur-fade";
 
 interface FeaturesProps {
-  whatsappUrl?: string;
+  onOpenForm?: () => void;
 }
 
 const modules = [
@@ -50,9 +50,7 @@ const modules = [
   },
 ];
 
-const Features = ({
-  whatsappUrl = "https://wa.me/5528999339279?text=Oi%20Felipe%2C%20vi%20sua%20mentoria%20e%20quero%20entender%20se%20faz%20sentido%20pra%20mim",
-}: FeaturesProps) => {
+const Features = ({ onOpenForm }: FeaturesProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -183,9 +181,9 @@ const Features = ({
           <div className="text-center mt-12">
             <button
               className="btn-ds"
-              onClick={() => window.open(whatsappUrl, "_blank")}
+              onClick={onOpenForm}
             >
-              Quero uma vaga
+              Aplicar para a Mentoria
             </button>
           </div>
         </BlurFade>

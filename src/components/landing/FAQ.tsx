@@ -2,12 +2,10 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 interface FAQProps {
-  whatsappUrl?: string;
+  onOpenForm?: () => void;
 }
 
-const FAQ = ({
-  whatsappUrl = "https://wa.me/5528999339279?text=Oi%20Felipe%2C%20vi%20sua%20mentoria%20e%20quero%20entender%20se%20faz%20sentido%20pra%20mim",
-}: FAQProps) => {
+const FAQ = ({ onOpenForm }: FAQProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
@@ -101,9 +99,9 @@ const FAQ = ({
         <div className="text-center">
           <button
             className="btn-ds"
-            onClick={() => window.open(whatsappUrl, "_blank")}
+            onClick={onOpenForm}
           >
-            Quero uma vaga
+            Aplicar para a Mentoria
           </button>
         </div>
       </div>

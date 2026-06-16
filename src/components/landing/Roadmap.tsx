@@ -1,7 +1,7 @@
 import BlurFade from "@/components/ui/blur-fade";
 
 interface RoadmapProps {
-  whatsappUrl?: string;
+  onOpenForm?: () => void;
 }
 
 const phases = [
@@ -27,9 +27,7 @@ const phases = [
   },
 ];
 
-const Roadmap = ({
-  whatsappUrl = "https://wa.me/5528999339279?text=Oi%20Felipe%2C%20vi%20sua%20mentoria%20e%20quero%20entender%20se%20faz%20sentido%20pra%20mim",
-}: RoadmapProps) => {
+const Roadmap = ({ onOpenForm }: RoadmapProps) => {
   return (
     <section className="section-light section-light-fade" style={{ paddingTop: '96px', paddingBottom: '96px' }}>
       <div className="ds-container">
@@ -108,9 +106,9 @@ const Roadmap = ({
               <div className="ml-16 mt-2">
                 <button
                   className="btn-ds-outline"
-                  onClick={() => window.open(whatsappUrl, "_blank")}
+                  onClick={onOpenForm}
                 >
-                  Quero começar
+                  Aplicar para a Mentoria
                 </button>
               </div>
             </BlurFade>

@@ -2,12 +2,10 @@ import { X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface StickyBarProps {
-  whatsappUrl?: string;
+  onOpenForm?: () => void;
 }
 
-const StickyBar = ({
-  whatsappUrl = "https://wa.me/5528999339279?text=Oi%20Felipe%2C%20vi%20sua%20mentoria%20e%20quero%20entender%20se%20faz%20sentido%20pra%20mim",
-}: StickyBarProps) => {
+const StickyBar = ({ onOpenForm }: StickyBarProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
 
@@ -55,9 +53,9 @@ const StickyBar = ({
             <button
               className="btn-ds text-sm"
               style={{ padding: '10px 24px', fontSize: '0.875rem' }}
-              onClick={() => window.open(whatsappUrl, "_blank")}
+              onClick={onOpenForm}
             >
-              Quero uma vaga
+              Aplicar para a Mentoria
             </button>
 
             <button

@@ -3,20 +3,20 @@ import BlurFade from "@/components/ui/blur-fade";
 import { Play } from "lucide-react";
 
 interface SocialProofProps {
-  whatsappUrl?: string;
+  onOpenForm?: () => void; // mantido para compatibilidade, não usado diretamente
 }
 
 const row1Testimonials = [
   {
     image: "/depoimentos/gabriel-martins.jpg",
-    highlight: "R$15.200 recebido",
-    legend: "Gabriel vendeu seguindo a metodologia ensinada na primeira aula",
+    highlight: "ROI de 3,8x — R$15.200 recebido",
+    legend: "Gabriel investiu R$4.000 e já aplicou o método na primeira aula para fechar R$15.200.",
     name: "Gabriel Martins",
   },
   {
     image: "/depoimentos/gui-vilas-9k.jpg",
-    highlight: "R$9.000 + R$3.600/mês",
-    legend: "Guilherme fechou implementação + contrato de 12 meses de recorrência",
+    highlight: "R$9.000 + R$3.600/mês — recorrência",
+    legend: "Guilherme fechou implementação + contrato de 12 meses. Mensalidade já cobre 9x o investimento.",
     name: "Guilherme Vilas",
   },
   {
@@ -144,21 +144,19 @@ function VideoCard() {
       </div>
       <div className="p-3">
         <p className="text-sm font-bold mb-0.5" style={{ color: "#00E3A5" }}>
-          R$33.000 no primeiro projeto
+          ROI de 8x — R$33k no 1º projeto
         </p>
         <p className="leading-snug" style={{ color: "#52525b", fontSize: "0.7rem" }}>
-          Letícia faz parte da mentoria individual e em grupo e graças a ela, fez sua primeira venda para a maior empresa de turismo do Brasil.
+          Letícia investiu R$4.000 e em menos de 30 dias fechou contrato com a maior empresa de turismo do Brasil.
         </p>
       </div>
     </div>
   );
 }
 
-const SocialProof = ({
-  whatsappUrl = "https://wa.me/5528999339279?text=Oi%20Felipe%2C%20vi%20sua%20mentoria%20e%20quero%20entender%20se%20faz%20sentido%20pra%20mim",
-}: SocialProofProps) => {
+const SocialProof = ({ onOpenForm }: SocialProofProps) => {
   return (
-    <section className="section-light section-light-fade">
+    <section className="section-light section-light-fade" style={{ paddingBottom: '40px' }}>
       {/* Header com container padrão */}
       <div className="ds-container">
         <BlurFade delay={0.1} inView>
@@ -195,17 +193,6 @@ const SocialProof = ({
         </div>
       </div>
 
-      {/* CTA */}
-      <div className="ds-container">
-        <div className="text-center">
-          <button
-            className="btn-ds"
-            onClick={() => window.open(whatsappUrl, "_blank")}
-          >
-            Quero esse resultado também
-          </button>
-        </div>
-      </div>
     </section>
   );
 };

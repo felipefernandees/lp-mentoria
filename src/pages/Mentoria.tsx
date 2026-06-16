@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Hero from "@/components/landing/Hero";
 import Agitation from "@/components/landing/Agitation";
 import Insight from "@/components/landing/Insight";
@@ -12,19 +12,24 @@ import About from "@/components/landing/About";
 import FAQ from "@/components/landing/FAQ";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
+import ApplicationForm from "@/components/landing/ApplicationForm";
+import CaseStudy from "@/components/landing/CaseStudy";
 
-const WHATSAPP_URL =
-  "https://wa.me/5528999339279?text=Oi%20Felipe%2C%20vi%20sua%20mentoria%20e%20quero%20entender%20se%20faz%20sentido%20pra%20mim";
+const WHATSAPP_NUMBER = "5528999339279";
 
 const Mentoria = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const openForm = () => setIsFormOpen(true);
+  const closeForm = () => setIsFormOpen(false);
+
   useEffect(() => {
-    document.title = "Mentoria Felipe Tâmbara";
+    document.title = "Mentoria Individual — IA & Automações com Felipe Tâmbara";
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
-        "De estagiário a R$220k em 12 meses. Mentoria 1x1 com Felipe: encontre problemas que empresas pagam pra resolver e feche seu primeiro cliente."
+        "De estagiário a R$220k em 12 meses com IA. Aplique para a mentoria individual 1x1 com Felipe Tâmbara e feche seu primeiro contrato."
       );
     }
 
@@ -38,10 +43,10 @@ const Mentoria = () => {
       metaTag.setAttribute("content", content);
     };
 
-    addMetaTag("og:title", "Mentoria Felipe Tâmbara");
+    addMetaTag("og:title", "Mentoria Individual — IA & Automações com Felipe Tâmbara");
     addMetaTag(
       "og:description",
-      "De estagiário a R$220k em 12 meses. Mentoria 1x1 com Felipe: encontre problemas que empresas pagam pra resolver e feche seu primeiro cliente."
+      "De estagiário a R$220k em 12 meses com IA. Aplique para a mentoria individual 1x1 com Felipe Tâmbara e feche seu primeiro contrato."
     );
     addMetaTag("og:type", "website");
     addMetaTag("og:image", "/felipe.jpg");
@@ -57,22 +62,22 @@ const Mentoria = () => {
     };
 
     addTwitterTag("twitter:card", "summary_large_image");
-    addTwitterTag("twitter:title", "Mentoria Felipe Tâmbara");
+    addTwitterTag("twitter:title", "Mentoria Individual — IA & Automações com Felipe Tâmbara");
     addTwitterTag(
       "twitter:description",
-      "De estagiário a R$220k em 12 meses. Mentoria 1x1 com Felipe: encontre problemas que empresas pagam pra resolver e feche seu primeiro cliente."
+      "De estagiário a R$220k em 12 meses com IA. Aplique para a mentoria individual 1x1 com Felipe Tâmbara e feche seu primeiro contrato."
     );
     addTwitterTag("twitter:image", "/felipe.jpg");
 
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "Course",
-      name: "Mentoria 1x1 de IA e Automações",
+      name: "Mentoria Individual 1x1 — IA e Automações",
       description:
         "Mentoria individual para encontrar problemas reais e faturar com IA e automações",
       provider: {
         "@type": "Person",
-        name: "Felipe",
+        name: "Felipe Tâmbara",
         image: "/felipe.jpg",
       },
       courseMode: "online",
@@ -93,18 +98,24 @@ const Mentoria = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <Hero whatsappUrl={WHATSAPP_URL} logoUrl="/logo.svg" />
+      <ApplicationForm
+        isOpen={isFormOpen}
+        onClose={closeForm}
+        whatsappNumber={WHATSAPP_NUMBER}
+      />
+      <Hero onOpenForm={openForm} logoUrl="/logo.svg" />
       <Agitation />
       <Insight />
-      <SocialProof whatsappUrl={WHATSAPP_URL} />
-      <Features whatsappUrl={WHATSAPP_URL} />
-      <Roadmap whatsappUrl={WHATSAPP_URL} />
+      <SocialProof onOpenForm={openForm} />
+      <CaseStudy onOpenForm={openForm} />
+      <Features onOpenForm={openForm} />
+      <Roadmap onOpenForm={openForm} />
       <IsForYou />
-      <Investment whatsappUrl={WHATSAPP_URL} />
+      <Investment onOpenForm={openForm} />
       <Guarantee />
       <About photoUrl="/felipe.jpg" />
-      <FAQ whatsappUrl={WHATSAPP_URL} />
-      <FinalCTA whatsappUrl={WHATSAPP_URL} />
+      <FAQ onOpenForm={openForm} />
+      <FinalCTA onOpenForm={openForm} />
       <Footer />
     </div>
   );

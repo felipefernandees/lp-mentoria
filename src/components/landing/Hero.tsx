@@ -1,12 +1,12 @@
 import { AnimatedHero } from "@/components/ui/animated-hero";
 
 interface HeroProps {
-  whatsappUrl?: string;
+  onOpenForm?: () => void;
   logoUrl?: string;
 }
 
-const Hero = ({ whatsappUrl, logoUrl }: HeroProps) => {
-  return <AnimatedHero whatsappUrl={whatsappUrl} logoUrl={logoUrl} />;
+const Hero = ({ onOpenForm, logoUrl }: HeroProps) => {
+  return <AnimatedHero onOpenForm={onOpenForm} logoUrl={logoUrl} />;
 };
 
 export default Hero;

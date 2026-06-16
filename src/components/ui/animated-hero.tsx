@@ -2,12 +2,12 @@ import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 interface AnimatedHeroProps {
-  whatsappUrl?: string;
+  onOpenForm?: () => void;
   logoUrl?: string;
 }
 
 function AnimatedHero({
-  whatsappUrl = "https://wa.me/5528999339279?text=Oi%20Felipe%2C%20vi%20sua%20mentoria%20e%20quero%20entender%20se%20faz%20sentido%20pra%20mim",
+  onOpenForm,
   logoUrl = "/logo.svg"
 }: AnimatedHeroProps) {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -100,12 +100,11 @@ function AnimatedHero({
           {/* CTA */}
           <div className="flex flex-col items-center gap-3 mt-2">
             <button
-              onClick={() => window.open(whatsappUrl, "_blank")}
+              onClick={onOpenForm}
               className="btn-ds"
               style={{ whiteSpace: 'nowrap' }}
             >
-              <span className="hidden sm:inline">Quero entender onde estou travando</span>
-              <span className="sm:hidden">Quero entender onde trava</span>
+              Aplicar para a Mentoria
             </button>
             <p className="text-xs" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.05em', textTransform: 'none' }}>
               Vagas limitadas por ciclo
