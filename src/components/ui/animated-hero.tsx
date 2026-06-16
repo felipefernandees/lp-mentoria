@@ -89,11 +89,19 @@ function AnimatedHero({
             </h1>
 
             <p
-              className="text-base md:text-lg leading-relaxed text-center max-w-2xl mx-auto mt-4"
+              className="text-base md:text-lg leading-relaxed text-center max-w-2xl mx-auto mt-4 mb-2"
               style={{ color: '#A1A1AA', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}
             >
-              O problema não é que você não sabe o suficiente. É que ninguém te ensinou a encontrar
-              problemas reais que empresas pagam pra resolver.
+              Você foi ensinado na ordem errada.{' '}
+              <span style={{ color: '#ffffff', fontWeight: 600 }}>Primeiro vende, depois aprende</span>
+              {' '}— não o contrário. É isso que o mercado esconde e que a mentoria inverte.
+            </p>
+
+            <p
+              className="text-sm leading-relaxed text-center max-w-xl mx-auto"
+              style={{ color: 'rgba(161,161,170,0.7)', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}
+            >
+              A rota mais curta de quem sabe IA para quem fatura com IA — através do Protocolo R.O.T.A.
             </p>
           </div>
 

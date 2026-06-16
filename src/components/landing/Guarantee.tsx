@@ -2,9 +2,9 @@ import { useState, useRef } from "react";
 import BlurFade from "@/components/ui/blur-fade";
 
 const checks = [
-  "Aplique tudo que eu te mostrar",
-  "Execute as atividades combinadas",
-  "Comprove que seguiu o processo",
+  "Aplique o Protocolo R.O.T.A. na sua situação",
+  "Execute as atividades e apareça nas calls",
+  "Se em 30 dias não tiver proposta enviada → próxima sessão sem custo",
 ];
 
 const Guarantee = () => {
@@ -149,11 +149,25 @@ const Guarantee = () => {
                     lineHeight: 1.6,
                   }}
                 >
-                  Se você aplicar tudo que eu te mostrar, executar as atividades combinadas e
-                  comprovar que seguiu o processo — e mesmo assim não tiver resultado —{" "}
+                  O problema que você tem não é falta de preparo. É falta de direção.{" "}
+                  <span style={{ color: '#A1A1AA' }}>
+                    Se você aplicar o Protocolo R.O.T.A. e mesmo assim não tiver resultado em 3 meses
+                    —
+                  </span>{" "}
                   <span className="font-bold text-gradient">
                     eu te coloco pra trabalhar comigo.
                   </span>
+                </p>
+                <p
+                  className="text-sm mt-4"
+                  style={{
+                    color: 'rgba(161,161,170,0.6)',
+                    fontWeight: 400,
+                    textTransform: 'none',
+                    letterSpacing: 'normal',
+                  }}
+                >
+                  "Não me sinto pronto" não é critério de exclusão. É o perfil exato de quem mais evolui aqui.
                 </p>
               </div>
             </div>

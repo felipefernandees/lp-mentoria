@@ -62,6 +62,13 @@ const Agitation = () => {
                 O problema não é falta de conhecimento.{' '}
                 <span style={{ color: '#00E3A5', fontWeight: 600 }}>É falta de direção.</span>
               </p>
+              <p style={{ color: '#52525b' }}>
+                Isso tem nome:{' '}
+                <span style={{ color: '#0a0a0a', fontWeight: 700 }}>Ciclo de Reinício.</span>{' '}
+                Um expert ensina a ferramenta X. Surge a Y. Ele declara X morta, você larga tudo e
+                recomeça. Quando Y está dominada, surge Z. Resultado:{' '}
+                <span style={{ color: '#0a0a0a', fontWeight: 600 }}>você está sempre aprendendo e nunca faturando.</span>
+              </p>
               <p className="font-semibold" style={{ color: '#0a0a0a' }}>
                 Você estava aprendendo a ferramenta sem saber qual problema ia resolver com ela. No
                 mercado, ninguém paga por ferramenta.{' '}

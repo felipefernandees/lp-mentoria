@@ -11,24 +11,28 @@ const row1Testimonials = [
     image: "/depoimentos/gabriel-martins.jpg",
     highlight: "ROI de 3,8x — R$15.200 recebido",
     legend: "Gabriel investiu R$4.000 e já aplicou o método na primeira aula para fechar R$15.200.",
+    beforeAfter: "Antes: achava que precisava dominar mais ferramentas. Depois: Arquiteto de Negócios que fecha contratos de R$15k.",
     name: "Gabriel Martins",
   },
   {
     image: "/depoimentos/gui-vilas-9k.jpg",
     highlight: "R$9.000 + R$3.600/mês — recorrência",
     legend: "Guilherme fechou implementação + contrato de 12 meses. Mensalidade já cobre 9x o investimento.",
+    beforeAfter: "Antes: sabia N8N mas não sabia precificar nem prospectar. Depois: receita recorrente sem trocar de stack.",
     name: "Guilherme Vilas",
   },
   {
     image: "/depoimentos/lucas-camelo.jpg",
     highlight: "Saiu da CLT",
-    legend: "Lucas vendeu automação de R$6k no primeiro mês",
+    legend: "Lucas vendeu automação de R$6k no primeiro mês e já tem segundo cliente na mão.",
+    beforeAfter: "Antes: empregado esperando a hora certa para sair. Depois: decide com quem trabalha e quanto cobra.",
     name: "Lucas Camelo",
   },
   {
     image: "/depoimentos/meu-10k.jpg",
     highlight: "R$10.000",
     legend: "Projeto entregue no modelo ensinado na mentoria",
+    beforeAfter: null,
     name: "Felipe",
   },
 ];
@@ -38,30 +42,35 @@ const row2Testimonials = [
     image: "/depoimentos/gui-vilas-4k.jpg",
     highlight: "R$4.000",
     legend: "Segundo projeto de Guilherme usando o método",
+    beforeAfter: null,
     name: "Guilherme Vilas",
   },
   {
     image: "/depoimentos/gustavo-piramo.jpg",
     highlight: "Primeiros projetos de IA",
-    legend: "Gustavo começou 2026 recebendo dos primeiros projetos",
+    legend: "Gustavo começou 2026 recebendo dos primeiros projetos.",
+    beforeAfter: "Antes: acumulava cursos sem cliente. Depois: recebendo pelos primeiros projetos reais.",
     name: "Gustavo Píramo",
   },
   {
     image: "/depoimentos/meu-6k.jpg",
     highlight: "R$6.000",
     legend: "Mais um projeto fechado pelo método",
+    beforeAfter: null,
     name: "Felipe",
   },
   {
     image: "/depoimentos/meu-5k.jpg",
     highlight: "R$5.500",
     legend: "Recorrência gerada com o mesmo cliente",
+    beforeAfter: null,
     name: "Felipe",
   },
   {
     image: "/depoimentos/primeira-automacao.jpg",
     highlight: "Primeira automação vendida",
     legend: "Primeiro projeto fechado seguindo o método da mentoria",
+    beforeAfter: null,
     name: "Aluno",
   },
 ];
@@ -70,6 +79,7 @@ function TestimonialCard({
   image,
   highlight,
   legend,
+  beforeAfter,
   name,
 }: (typeof row1Testimonials)[0]) {
   return (
@@ -92,9 +102,14 @@ function TestimonialCard({
         <p className="text-sm font-bold mb-0.5" style={{ color: "#00E3A5" }}>
           {highlight}
         </p>
-        <p className="text-xs leading-snug" style={{ color: "#52525b" }}>
+        <p className="text-xs leading-snug mb-1" style={{ color: "#52525b" }}>
           {legend}
         </p>
+        {beforeAfter && (
+          <p className="text-xs leading-snug italic" style={{ color: "#71717a" }}>
+            {beforeAfter}
+          </p>
+        )}
       </div>
     </div>
   );
@@ -146,8 +161,11 @@ function VideoCard() {
         <p className="text-sm font-bold mb-0.5" style={{ color: "#00E3A5" }}>
           ROI de 8x — R$33k no 1º projeto
         </p>
-        <p className="leading-snug" style={{ color: "#52525b", fontSize: "0.7rem" }}>
+        <p className="leading-snug mb-1" style={{ color: "#52525b", fontSize: "0.7rem" }}>
           Letícia investiu R$4.000 e em menos de 30 dias fechou contrato com a maior empresa de turismo do Brasil.
+        </p>
+        <p className="leading-snug italic" style={{ color: "#71717a", fontSize: "0.65rem" }}>
+          Antes: achava que precisava de mais um curso para se sentir pronta. Depois: decide quais projetos aceita e quanto cobra.
         </p>
       </div>
     </div>

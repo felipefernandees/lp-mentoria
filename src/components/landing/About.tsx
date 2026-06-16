@@ -39,12 +39,12 @@ const About = ({ photoUrl = "/felipe.jpg" }: AboutProps) => {
               {/* Nome + links sociais */}
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <p className="text-lg font-bold" style={{ color: '#ffffff' }}>Felipe</p>
+                  <p className="text-lg font-bold" style={{ color: '#ffffff' }}>Felipe Tâmbara</p>
                   <p
                     className="text-xs font-semibold uppercase tracking-widest mt-1"
                     style={{ color: '#00E3A5', letterSpacing: '0.12em' }}
                   >
-                    IA & Automações
+                    Arquiteto de Negócios com IA
                   </p>
                 </div>
 
@@ -89,24 +89,34 @@ const About = ({ photoUrl = "/felipe.jpg" }: AboutProps) => {
                 </div>
               </div>
 
-              {/* Bio */}
+              {/* Bio — empatia primeiro, autoridade depois (Donald Miller) */}
               <p
                 className="text-base leading-relaxed mb-3"
                 style={{ color: '#A1A1AA', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}
               >
-                Você vai ter ao lado alguém que fez{' '}
+                Já fui o cara que sabia tudo sobre IA e automação — e no fim do mês não entrava nada.
+                Sabia fazer. Não sabia vender. Não sabia por onde começar a cobrar.
+              </p>
+
+              <p
+                className="text-base leading-relaxed mb-3"
+                style={{ color: '#A1A1AA', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}
+              >
+                O que mudou não foi o conhecimento. Foi a ordem:{' '}
+                <span style={{ color: '#ffffff', fontWeight: 600 }}>vender primeiro, aprender profundo durante a entrega.</span>{' '}
+                Isso me levou de estagiário de TI ganhando R$1.000/mês a{' '}
                 <span style={{ color: '#00E3A5', fontWeight: 600 }}>R$220.000 em 12 meses</span>{' '}
-                resolvendo problemas reais com IA — sem SaaS, sem infoproduto — e que vai te guiar
-                pelo mesmo caminho sem os erros que me custaram meses.
+                — sem SaaS, sem infoproduto.
               </p>
 
               <p
                 className="text-base leading-relaxed"
                 style={{ color: '#A1A1AA', fontWeight: 400, textTransform: 'none', letterSpacing: 'normal' }}
               >
+                Hoje sistematizei esse caminho no Protocolo R.O.T.A. e aplico individualmente com cada mentorado.
                 Não é suporte genérico. É{' '}
                 <span style={{ color: '#00E3A5', fontWeight: 600 }}>uma call por semana diretamente comigo</span>,
-                focada em destravar o que está entre você e o seu próximo contrato.
+                focada no seu atalho específico — não na receita padrão do mercado.
               </p>
             </BlurFade>
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Hero from "@/components/landing/Hero";
 import Agitation from "@/components/landing/Agitation";
 import Insight from "@/components/landing/Insight";
+import ROTA from "@/components/landing/ROTA";
 import SocialProof from "@/components/landing/SocialProof";
 import Features from "@/components/landing/Features";
 import Roadmap from "@/components/landing/Roadmap";
@@ -106,6 +107,7 @@ const Mentoria = () => {
       <Hero onOpenForm={openForm} logoUrl="/logo.svg" />
       <Agitation />
       <Insight />
+      <ROTA />
       <SocialProof onOpenForm={openForm} />
       <CaseStudy onOpenForm={openForm} />
       <Features onOpenForm={openForm} />

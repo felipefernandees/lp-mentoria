@@ -121,14 +121,27 @@ const Insight = () => {
 
           {/* Fechamento */}
           <BlurFade delay={0.42} inView>
-            <p
-              className="text-base md:text-lg leading-relaxed text-center pt-8"
-              style={{ color: '#A1A1AA', borderTop: '1px solid rgba(255,255,255,0.08)', textTransform: 'none', letterSpacing: 'normal' }}
+            <div
+              className="pt-8"
+              style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
             >
-              Essa virada de mentalidade é o que{' '}
-              <span style={{ color: '#00E3A5', fontWeight: 600 }}>separa quem fatura de quem acumula curso</span>
-              . E é o primeiro ajuste que eu faço com todo mentorado.
-            </p>
+              <p
+                className="text-base md:text-lg leading-relaxed text-center mb-6"
+                style={{ color: '#A1A1AA', textTransform: 'none', letterSpacing: 'normal' }}
+              >
+                Essa virada de mentalidade é o que{' '}
+                <span style={{ color: '#00E3A5', fontWeight: 600 }}>separa quem fatura de quem acumula curso</span>
+                . E é o primeiro ajuste que eu faço com todo mentorado — através do Protocolo R.O.T.A.
+              </p>
+              <p
+                className="text-sm text-center"
+                style={{ color: 'rgba(161,161,170,0.6)', textTransform: 'none', letterSpacing: 'normal' }}
+              >
+                A pessoa que sai da mentoria não é mais "alguém que sabe IA". É um{' '}
+                <span style={{ color: '#00E3A5', fontWeight: 600 }}>Arquiteto de Negócios com IA</span>
+                {' '}— alguém que projeta soluções reais para empresas reais e cobra por isso.
+              </p>
+            </div>
           </BlurFade>
         </div>
       </div>

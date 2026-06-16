@@ -211,6 +211,24 @@ const ApplicationForm = ({
 
   const submit = () => {
     setSubmitted(true);
+
+    const payload = {
+      name: form.name,
+      email: form.email,
+      phone: `${ddi} ${form.phone}`,
+      situation: form.situation,
+      tried: form.tried,
+      whyNow: form.whyNow,
+      investment: form.investment,
+      submittedAt: new Date().toISOString(),
+      source: "lp-mentoria",
+    };
+
+    fetch("https://autowebhook.iasociety.com.br/webhook/forms-mentoria-lp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).catch(() => {});
   };
 
   const handleWhatsAppContact = () => {

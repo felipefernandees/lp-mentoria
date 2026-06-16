@@ -8,14 +8,17 @@ const FinalCTA = ({ onOpenForm }: FinalCTAProps) => {
       <div className="ds-container relative z-10 text-center">
         <p className="section-label text-center" style={{ color: '#00E3A5' }}>&#123; Próximo Passo &#125;</p>
         <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: '#0a0a0a', letterSpacing: '-0.02em' }}>
-          Pare de ficar pra trás com{" "}
-          <span className="text-gradient">IA.</span>
+          Chega de{" "}
+          <span className="text-gradient">reiniciar.</span>
         </h2>
 
-        <p className="text-xl mb-12 max-w-2xl mx-auto" style={{ color: '#52525b' }}>
-          Você já sabe o suficiente pra começar.{' '}
-          <span style={{ color: '#00E3A5', fontWeight: 600 }}>O que falta é direção.</span>{' '}
-          É isso que eu ofereço.
+        <p className="text-xl mb-4 max-w-2xl mx-auto" style={{ color: '#52525b' }}>
+          Aplique o Protocolo R.O.T.A. e saia com{' '}
+          <span style={{ color: '#00E3A5', fontWeight: 600 }}>seu primeiro cliente nos próximos 3 meses.</span>
+        </p>
+
+        <p className="text-base mb-12 max-w-xl mx-auto" style={{ color: '#71717a' }}>
+          Você não precisa dominar mais uma ferramenta. Precisa de direção. É isso que a mentoria oferece.
         </p>
 
         <button
